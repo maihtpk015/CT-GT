@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="https://github.com/hohieuit/javascript-coban/blob/master/de%20bai/1_function.txt">
+    <script src="javascript.js"></script>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        var nodeKetQua = document.getElementById("result");
+        var HTML = '';
+        HTML += HTML + `
+        <p>${tong(2,3)}</p>
+        <p>${hieu(5,3)}</p>
+        <p>${tich(10,5)}</p>
+        <p>${thuong(2,3)}</p>
+        <p>${binhPhuong(3)}</p>
+        <p>${max(5,9)}</p>
+        <p>${min(6,3)}</p>
+        <p>${trungBinh(7,8)}</p>
+        <p>${chiaLayDu(5,7)}</p>
+        <p>${chiaHet(70,10)}</p>
+        <p>${chuViChuNhat(2,3)}</p>
+        <p>${dienTichChuNhat(5,4)}</p>
+        <p>${chuViTron(5)}</p>
+        <p>${dienTichTron(3)}</p>
+        <p>${noiChuoi(chuoi1,chuoi3)}</p>
+        <p>${noiChuoi(noiChuoi(noiChuoi(noiChuoi(chuoi1,chuoi2),chuoi3),chuoi4),chuoi5)}</p>
+        <p>${inHoa("Nụ")}</p>
+        <p>${inHoa(chuoiT)}</p>
+        <p>${coTonTai("nu","hoa")}</p>
+        <p>${doDai(chuoi1)}</p>
+        <p>${doDai(chuoi2)}</p>
+        <p>${doDai(chuoi3)}</p>
+        <p>${doDai(chuoi4)}</p>
+        <p>${doDai(chuoi5)}</p>
+        <p>${doDai(chuoiT)}</p>
+        <p>${catChuoi(chuoi1)}</p>
+        <p>${catChuoi(chuoi2)}</p>
+        <p>${catChuoi(chuoi3)}</p>
+        <p>${catChuoi(chuoi4)}</p>
+        <p>${catChuoi(chuoi5)}</p>
+        <p>${tonTai(chuoi1,chuoi5)}</p>
+        <p>${tonTai(chuoi2,chuoi5)}</p>
+        <p>${tonTai(chuoi3,chuoi5)}</p>
+        <p>${tonTai(chuoi4,chuoi5)}</p>
+        `
+        nodeKetQua.innerHTML = HTML;
+    </script>
+</body>
+</html>
+
+//JAVASCRIPT.JS
+function tong(a,b) {
+    return ` Tổng 2 số ${a} và ${b} là: `+  (a+b);
+}
+
+function hieu(a,b) {
+    return `Hiệu 2 số ${a} và ${b} là: `+ (a-b);
+}
+
+function tich(a,b) {
+    return `Tích 2 số ${a} và ${b} là: `+ a*b;
+}
+
+function thuong(a,b) {
+    if(b==0){
+        return "Mẫu khác 0";
+    }
+    return `Thương 2 số ${a} và ${b} là: `+  a/b;
+}
+
+function binhPhuong(a) {
+    return  `Bình phương của số ${a} là:` + a*a;
+}
+
+function max(a,b) {
+    if(a>b){
+        return "Số lớn hơn là:" + a;
+    }
+    return "Số lớn hơn là: " + b;
+}
+
+function min(a,b) {
+    if(a>b){
+        return "Số nhỏ hơn là:" + b;
+    }
+    return "Số nhỏ hơn là: " + a;
+}
+
+function trungBinh(a,b) {
+    return `Trung bình cộng của 2 số ${a} và ${b} là: `+ (a+b)/2;
+}
+
+function chiaLayDu(a,b) {
+    if(b==0){
+        return "Mẫu khác 0"
+    }
+    return ` Số ${a} chia số ${b} dư: `+ a%b;
+}
+
+function chiaHet(a,b) {
+    if(a%b== 0){
+        return `Số ${a} chia hết cho số ${b}`
+    }if(b%a== 0){
+        return `Số ${b} chia hết cho số ${a}`
+    }
+    return "Không có số nào chia hết cho nhau"
+}
+
+function chuViChuNhat(a,b) {
+    return `Chu vi hình chữ nhật có cạnh a: ${a} và cạnh b: ${b} là: ` + (a+b)*2;
+}
+
+function dienTichChuNhat(a,b) {
+    return ` Diện tích hình chữ nhật có cạnh a: ${a} và cạnh b: ${b} là: ` + (a*b);
+}
+
+function chuViTron(a) {
+    return `Chu vi hình tròn có bán kính ${a} và lấy π = 3.14 là: ` + (2*a*3.14);
+}
+
+function dienTichTron(a) {
+    return ` Diện tích hình tròn có bán kính ${a} và lấy π = 3.14 là: ` + (3.14 *a*a);
+}
+
+var chuoi1 = "Nụ cười ươm đầy nắng ";
+var chuoi2 = "Ánh mắt dư ngọt ngào ";
+var chuoi3 = "Tim anh mà có vắng ";
+var chuoi4 = "Dắt em vô với nàooo";
+var chuoi5 = "Dính thính chưa nàooo...";
+var chuoiS = chuoi1+" "+chuoi2+" "+chuoi3+" "+chuoi4+" "+chuoi5;
+var chuoiT = chuoi1+chuoi2+chuoi3+chuoi4+chuoi5;
+
+function noiChuoi(a,b) {
+    return a +" "+  b;
+}
+
+function inHoa(a) {
+    return a.toUpperCase() ;
+}
+
+function coTonTai(a,b) {
+    if(a.includes(b)){
+        return `Trong ${a} có tồn tại ${b}`;
+    }
+    return `Trong ${a} không tồn tại ${b}`;
+}
+
+function doDai(a) {
+    return ` Độ dài của chuỗi ${a} là: `+a.length ;
+}
+
+function catChuoi(a) {
+    return` Cắt chuỗi từ 1 đến 3 của chuỗi ${a} là: `+ a.substring(0,3);
+}
+
+function tonTai(a,b) {
+    if(a.includes(b)){
+        return `Trong ${a} có tồn tại ${b}`;
+    }
+    return `Trong ${a} không tồn tại ${b}`;
+}
